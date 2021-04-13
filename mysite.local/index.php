@@ -13,20 +13,24 @@ $welcome = ''; // Инициализируем переменную для пр�
 
 if ($hour > 0 && $hour < 6) {
   $welcome = 'Доброй ночи';
-}
-elseif ($hour >= 6 && $hour < 12) {
+} elseif ($hour >= 6 && $hour < 12) {
   $welcome = 'Доброе утро';
-}
-elseif ($hour >= 12 && $hour < 18) {
+} elseif ($hour >= 12 && $hour < 18) {
   $welcome = 'Добрый день';
-}
-elseif ($hour >= 18 && $hour < 23) {
+} elseif ($hour >= 18 && $hour < 23) {
   $welcome = 'Добрый вечер';
-}
-else {
+} else {
   $welcome = 'Доброй ночи';
 }
-echo $welcome;
+
+$leftMenu = [
+  ['link' => 'Домой', 'href' => 'index.php'],
+  ['link' => 'О нас', 'href' => 'about.php'],
+  ['link' => 'Контакты', 'href' => 'contact.php'],
+  ['link' => 'Таблица умножения', 'href' => 'table.php'],
+  ['link' => 'Калькулятор', 'href' => 'calc.php']
+];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,24 +74,20 @@ echo $welcome;
     <!-- Навигация -->
     <h2>Навигация по сайту</h2>
     <!-- Меню -->
-    <ul>
-      <li><a href='index.php'>Домой</a>
-      </li>
-      <li><a href='about.php'>О нас</a>
-      </li>
-      <li><a href='contact.php'>Контакты</a>
-      </li>
-      <li><a href='table.php'>Таблица умножения</a>
-      </li>
-      <li><a href='calc.php'>Калькулятор</a>
-      </li>
-    </ul>
-    <!-- Меню -->
+    <?php
+    foreach ($leftMenu as $item) { // $item - внутренний массив
+      echo "<ul>";
+      echo "<li>";
+      echo "<a href='{$item['href']}'> {$item['link']} </a>";
+      echo "</li>";
+      echo "</ul>";
+    }
+    ?>
     <!-- Навигация -->
   </div>
   <div id="footer">
     <!-- Нижняя часть страницы -->
-    &copy; Супер Мега Веб-мастер, 2000 &ndash; 
+    &copy; Супер Мега Веб-мастер, 2000 &ndash;
     <!-- Нижняя часть страницы -->
     <?php echo $year; ?>
   </div>
