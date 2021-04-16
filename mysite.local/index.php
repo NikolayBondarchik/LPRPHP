@@ -31,6 +31,16 @@ $leftMenu = [
   ['link' => 'Калькулятор', 'href' => 'calc.php']
 ];
 
+
+function drawMenu($menu, $vertical=true){
+  $style='';
+    if(!$vertical){$style = "";}
+      echo "<ul style='list-style-type:none'>";
+      foreach($menu as $link=>$href){
+        echo "<li$style><a href='$href'>$link</a></li>";
+      }
+      echo "</ul>";
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,13 +85,14 @@ $leftMenu = [
     <h2>Навигация по сайту</h2>
     <!-- Меню -->
     <?php
-    foreach ($leftMenu as $item) { // $item - внутренний массив
-      echo "<ul>";
-      echo "<li>";
-      echo "<a href='{$item['href']}'> {$item['link']} </a>";
-      echo "</li>";
-      echo "</ul>";
-    }
+    $menu = array(
+      'Домой' => "index.php",
+      'О нас'=> "about.php",
+      'Контакты'=> "contact.php",
+      'Таблица умножения'=> "table.php",
+      'Калькулятор'=> "calc.php"
+      );
+  drawMenu($menu, false);
     ?>
     <!-- Навигация -->
   </div>
