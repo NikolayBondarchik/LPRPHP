@@ -1,19 +1,7 @@
 <?php
-function drawTable ($cols = 10, $rows = 10, $background = 'yellow') {
-	echo "<table border = '4' width='500' text-align : center>";
-	for ($tr = 1; $tr <= $rows; $tr++) { 
-	    echo "<tr >"; 
-	        for ($td = 1; $td <= $cols; $td++) { 
-	            if ($tr == 1 || $td == 1) {
-	               echo "<th  style = 'background : {$background}'>" . $tr * $td . "</th>"; 
-	            } else
-	            echo "<td >" . $tr * $td . "</td>"; 
-	        	}
-	        }
-	    echo "</tr>";
-	 echo "</table>";
-	}
+require_once 'inc/lib.inc.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -55,8 +43,8 @@ function drawTable ($cols = 10, $rows = 10, $background = 'yellow') {
     </form>
     <!-- Таблица -->
     <?php
-  drawTable(5,10, 'orange');
-?>
+	drawTable (6, 5, 'green');
+    ?>
     <!-- Таблица -->
     <!-- Область основного контента -->
   </div>
