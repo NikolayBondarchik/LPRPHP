@@ -10,7 +10,7 @@ $color = trim(strip_tags($_POST['color']));
 }
 $cols = ($cols) ? $cols : 10;
 $rows = ($rows) ? $rows : 10;
-$color = ($color) ? $color : 'orange';
+$color = ($color) ? $color : 'yellow';
 ?>
 
 <!DOCTYPE html>
