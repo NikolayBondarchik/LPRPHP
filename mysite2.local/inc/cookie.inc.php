@@ -1,18 +1,16 @@
 <?php
 $visitCounter = (isset ($_COOKIE["visitCounter"])) ? $_COOKIE["visitCounter"] : 0;
 $visitCounter++;
-setcookie("visitCounter", $visitCounter, time()+3);
+setcookie("visitCounter", $visitCounter, time()+5);
 echo "Пользователь посещал страницу $visitCounter раз";
-
 echo "</br>";
 
-$lastvisit = $_COOKIE["lastvisit"]; 
-if (!isSet($lastvisit)) 
-$lastvisit = date('Y-m-d H:i:s'); 
-else 
-$lastvisit = $lastvisit; 
-echo "Последний раз вы заходили $lastvisit";
 
+$lastVisit = $_COOKIE["lastVisit"]; 
+if (!isSet($lastVisit)) 
+$lastVisit = date('Y-m-d H:i:s'); 
+else 
+$lastVisit = $lastVisit; 
+echo "Последний раз вы заходили $lastVisit";
 echo "</br>";
 ?>
-
